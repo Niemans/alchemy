@@ -23,13 +23,11 @@ public class Couldron : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("oce");
         if (!collision.gameObject.TryGetComponent(out Herb touchingHerb)) return;
         if (herbs.Contains(touchingHerb)) return;
         herbs.Add(touchingHerb);
         AddElements(touchingHerb);
         touchingHerb.enabled = false;
-        Debug.Log("oce2");
     }
 
     private void AddElements(Herb herb)
